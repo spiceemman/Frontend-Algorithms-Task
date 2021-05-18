@@ -1,12 +1,37 @@
 // Frontend Algorithms Task (Frontend Task 4) - Part I
 
+const convertFahrToCelsius = (fahr)=>{
+	
+	const tempInC = ((fahr - 32) * 5/9).toFixed(4);
+
+	const fahrFloat = parseFloat(fahr);
+
+	if (Array.isArray(fahr) === true){
+		console.log(`[${fahr}] is not a valid number but an array`)
+	}	
+		else if (isNaN(fahr) === true){
+		return `${JSON.stringify(fahr)} is not a valid number but a/an ${typeof(fahr)}.`
+	} 
+		else if(fahrFloat === 'number'){
+			return `${tempInC}`
+		}
+		else {
+			return `${tempInC}`
+		}
+}
+
+console.log(convertFahrToCelsius("77"));
+
 
 
 // Frontend Algorithms Task (Frontend Task 4) - Part II
 
 const checkYuGiOh = (n)=> {
 	let yuGiOh = [];
-	if (isNaN(n) || n === null || Array.isArray(n)){
+
+	const nFloat = parseFloat(n)
+
+	if (isNaN(n) === true || nFloat === 'number'){
 		return `Invalid parameter: ${JSON.stringify(n)}`
 	} else {
 		for (let i = 1; i<=n; i++){
@@ -33,6 +58,4 @@ const checkYuGiOh = (n)=> {
 	}
 }
 
-console.log(checkYuGiOh({name: "Emmanuel", age: 7}));
-
-
+console.log(checkYuGiOh('20'));
