@@ -6,21 +6,15 @@ const convertFahrToCelsius = (fahr)=>{
 
 	const fahrFloat = parseFloat(fahr);
 
-	if (Array.isArray(fahr) === true){
-		console.log(`[${fahr}] is not a valid number but an array`)
-	}	
-		else if (isNaN(fahr) === true){
-		return `${JSON.stringify(fahr)} is not a valid number but a/an ${typeof(fahr)}.`
-	} 
-		else if(fahrFloat === 'number'){
-			return `${tempInC}`
-		}
-		else {
-			return `${tempInC}`
-		}
+	if (isNaN(fahrFloat) === true || Array.isArray(fahr) === true){
+		return(`${JSON.stringify(fahr)} is not a valid number but a/an ${Array.isArray(fahr) ? 'array' : typeof fahr}.`)
+	} else {
+		return tempInC
+	}
+
 }
 
-console.log(convertFahrToCelsius("77"));
+console.log(convertFahrToCelsius({name:"eba"}));
 
 
 
@@ -58,4 +52,4 @@ const checkYuGiOh = (n)=> {
 	}
 }
 
-console.log(checkYuGiOh('20'));
+console.log(checkYuGiOh("20, 10"));
