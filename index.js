@@ -14,7 +14,7 @@ const convertFahrToCelsius = (fahr)=>{
 
 }
 
-console.log(convertFahrToCelsius());
+console.log(convertFahrToCelsius(""));
 
 
 
@@ -25,13 +25,14 @@ const checkYuGiOh = (n)=> {
 
 	const nFloat = parseFloat(n)
 
-	if (isNaN(n) === true || nFloat === 'number'){
-		return `Invalid parameter: ${JSON.stringify(n)}`
-	} else {
-		for (let i = 1; i<=n; i++){
-			if (n === 1){
-				yuGiOh.push(1);
-			} else if (i%2 ===0 && i%3 === 0 && i%5 === 0){
+		if (typeof n === "boolean"){
+			return `Invalid parameter: ${n}`
+		} else if (isNaN(n) === true || nFloat === 'number'){
+			return `Invalid parameter: ${JSON.stringify(n)}`
+		} else {
+			for (let i = 1; i<=n; i++){
+
+			if (i%2 ===0 && i%3 === 0 && i%5 === 0){
 				yuGiOh.push("Yu-Gi-Oh")
 			} else if (i%2 ===0 && i%3 === 0){
 				yuGiOh.push("Yu-Gi")
@@ -52,4 +53,4 @@ const checkYuGiOh = (n)=> {
 	}
 }
 
-console.log(checkYuGiOh());
+console.log(checkYuGiOh(10));
