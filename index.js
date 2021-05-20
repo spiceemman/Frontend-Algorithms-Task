@@ -14,7 +14,7 @@ const convertFahrToCelsius = (fahr)=>{
 
 }
 
-console.log(convertFahrToCelsius(""));
+console.log(convertFahrToCelsius());
 
 
 
@@ -53,4 +53,4 @@ const checkYuGiOh = (n)=> {
 	}
 }
 
-console.log(checkYuGiOh(10));
+console.log(checkYuGiOh());
