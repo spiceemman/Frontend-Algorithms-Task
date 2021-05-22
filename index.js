@@ -25,9 +25,15 @@ const checkYuGiOh = (n)=> {
 
 	const nFloat = parseFloat(n)
 
-		if (typeof n === "boolean"){
+		if (n === null){
+			return `Invalid parameter: null`
+		}else if (typeof n === "boolean"){
 			return `Invalid parameter: ${n}`
-		} else if (isNaN(n) === true || nFloat === 'number'){
+		} else if(n === ""){
+			return `Invalid parameter: ""`
+		} else if (Array.isArray(n) === true){
+			return `Invalid parameter: [${n}]`
+		}else if (isNaN(n) === true || nFloat === 'number'){
 			return `Invalid parameter: ${JSON.stringify(n)}`
 		} else {
 			for (let i = 1; i<=n; i++){
@@ -53,4 +59,4 @@ const checkYuGiOh = (n)=> {
 	}
 }
 
-console.log(checkYuGiOh());
+console.log(checkYuGiOh(false));
