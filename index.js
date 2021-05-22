@@ -59,4 +59,4 @@ const checkYuGiOh = (n)=> {
 	}
 }
 
-console.log(checkYuGiOh(false));
+console.log(checkYuGiOh());
